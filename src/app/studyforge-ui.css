@@ -1,0 +1,304 @@
+
+/* StudyForge V0.7.3 — Visual Polish & Modal Fix */
+
+.sf-polish {
+  --sf-primary: #534cf3;
+  --sf-primary-dark: #4338ca;
+  --sf-ink: #20283f;
+  --sf-muted: #8390a6;
+  --sf-border: #e9edf5;
+  --sf-bg: #f7f9fd;
+  --sf-shadow: 0 3px 16px rgba(37, 48, 84, 0.045);
+
+  color: var(--sf-ink);
+  background: var(--sf-bg);
+  font-family: Inter, "Segoe UI", "Microsoft YaHei",
+    "PingFang SC", sans-serif;
+}
+
+/* Sidebar */
+
+.sf-polish > aside {
+  background: linear-gradient(
+    180deg,
+    #f4f5fd 0%,
+    #f7f8fc 75%,
+    #f2f4fa 100%
+  );
+  border-right: 1px solid #e9eaf3;
+}
+
+.sf-polish > aside > div:first-child {
+  padding-top: 26px;
+  padding-bottom: 27px;
+}
+
+.sf-polish > aside h1 {
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.65px;
+  color: #252a43;
+}
+
+.sf-polish > aside h1 + p {
+  margin-top: 3px;
+  color: #939ab0;
+  letter-spacing: 0.15px;
+}
+
+.sf-polish > aside > div:first-child > div:first-child {
+  background: linear-gradient(
+    145deg,
+    #756afa,
+    #4f46e5
+  );
+  border-radius: 14px;
+  box-shadow: 0 5px 14px rgba(79, 70, 229, 0.17);
+}
+
+/* Create session button */
+
+.sf-polish > aside > div:nth-child(2) > button {
+  min-height: 46px;
+  border-radius: 13px;
+  background: linear-gradient(
+    110deg,
+    #635cf5,
+    #4e46e6
+  );
+  box-shadow: 0 4px 13px rgba(83, 76, 243, 0.14);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
+}
+
+.sf-polish > aside > div:nth-child(2) > button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+  box-shadow: 0 6px 18px rgba(83, 76, 243, 0.2);
+}
+
+/* Sidebar interactions */
+
+.sf-polish > aside button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sf-polish > aside button:focus-visible {
+  outline: 2px solid #8c86ff;
+  outline-offset: 2px;
+}
+
+.sf-polish > aside > div.space-y-1 button {
+  border-radius: 11px;
+  transition:
+    background 170ms ease,
+    color 170ms ease;
+}
+
+/*
+  Main content area.
+
+  IMPORTANT:
+  Use the direct sibling of <aside>.
+  Do not use div:last-of-type here.
+  Modal overlays are also direct children of <main>.
+*/
+
+.sf-polish > aside + div {
+  background:
+    radial-gradient(
+      ellipse 60% 35% at 85% 0%,
+      rgba(226, 228, 255, 0.3),
+      transparent 75%
+    ),
+    #f8f9fc;
+  min-width: 0;
+}
+
+.sf-polish > aside + div > header {
+  min-height: 68px;
+  height: 68px;
+  padding-left: 26px;
+  padding-right: 26px;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--sf-border);
+  backdrop-filter: blur(14px);
+}
+
+.sf-polish > aside + div > header h2 {
+  color: #28304c;
+  font-weight: 700;
+  letter-spacing: -0.35px;
+}
+
+.sf-polish > aside + div > header p {
+  margin-top: 3px;
+  color: #98a1b5;
+}
+
+/* Main content cards */
+
+.sf-polish section {
+  scrollbar-color: #d8dded transparent;
+  scrollbar-width: thin;
+}
+
+.sf-polish section .rounded-2xl.border.bg-white,
+.sf-polish section .rounded-2xl.border.border-slate-200,
+.sf-polish section .rounded-2xl.border.border-indigo-100 {
+  border-color: var(--sf-border);
+  box-shadow: var(--sf-shadow);
+}
+
+.sf-polish section .shadow-sm {
+  box-shadow: var(--sf-shadow);
+}
+
+/* Learning statistics */
+
+.sf-polish section .grid > div.rounded-2xl.bg-white {
+  border-color: var(--sf-border);
+  border-radius: 17px;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.sf-polish section .grid > div.rounded-2xl.bg-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 23px rgba(50, 58, 96, 0.08);
+}
+
+.sf-polish section .grid > div.rounded-2xl.bg-white p.text-2xl {
+  color: var(--sf-primary);
+  letter-spacing: -0.9px;
+}
+
+/* Interactive elements */
+
+.sf-polish section button,
+.sf-polish footer button {
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.sf-polish button:focus-visible {
+  outline: 2px solid #8c86ff;
+  outline-offset: 2px;
+}
+
+/* Chat bubbles */
+
+.sf-polish section .bg-indigo-600.text-white {
+  background: linear-gradient(
+    120deg,
+    #625bf1,
+    #5149e5
+  );
+  box-shadow: 0 3px 12px rgba(83, 76, 243, 0.13);
+}
+
+.sf-polish section .rounded-bl-sm.bg-white {
+  border-color: #ebedf4;
+  box-shadow: 0 2px 12px rgba(50, 55, 90, 0.035);
+}
+
+/* Chat input */
+
+.sf-polish footer {
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 1px solid #edf0f6;
+}
+
+.sf-polish footer > div > div {
+  background: #f9faff;
+  border-color: #e4e8f2;
+  border-radius: 17px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.sf-polish footer > div > div:focus-within {
+  border-color: #a6a2fa;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.07);
+}
+
+.sf-polish footer textarea::placeholder {
+  color: #a4aec0;
+}
+
+.sf-polish footer > div > div > button:last-child {
+  border-radius: 12px;
+  background: #534cf3;
+}
+
+.sf-polish footer > div > div > button:last-child:hover:not(:disabled) {
+  background: #4338ca;
+}
+
+/* Dialog overlay — translucent background */
+
+.sf-polish > div.fixed.inset-0.z-50 {
+  background-color: rgba(15, 23, 42, 0.38);
+}
+
+/* Dialog card */
+
+.sf-polish > div.fixed.inset-0.z-50 > div {
+  border: 1px solid #edf0f7;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.18);
+}
+
+/* Context menu */
+
+.sf-polish > div.fixed.z-50.w-40 {
+  border-color: #e9edf5;
+  box-shadow: 0 12px 36px rgba(25, 33, 66, 0.14);
+}
+
+/* Responsive layout */
+
+@media (max-width: 767px) {
+  .sf-polish > aside + div > header {
+    height: 60px;
+    min-height: 60px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .sf-polish footer {
+    padding: 12px;
+  }
+
+  .sf-polish section .rounded-2xl {
+    border-radius: 15px;
+  }
+
+  .sf-polish > aside {
+    box-shadow: 9px 0 32px rgba(29, 36, 70, 0.11);
+  }
+
+  .sf-polish > div.fixed.inset-0.z-50 > div {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+/* Reduced motion support */
+
+@media (prefers-reduced-motion: reduce) {
+  .sf-polish *,
+  .sf-polish *::before,
+  .sf-polish *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
