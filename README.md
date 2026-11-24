@@ -25,32 +25,70 @@ StudyForge 是一个由 AI 智能体驱动的个性化学习工作台。你可�
 
 ## 本地运行
 
-**准备：** [Node.js](https://nodejs.org/)（含 npm）和一个 [DeepSeek API Key](https://platform.deepseek.com/)。
+### 1. 环境准备
 
-1. 下载仓库 ZIP 并解压，或使用 Git 克隆仓库。在终端进入项目根目录。
-2. 安装依赖：
+运行 StudyForge 前，需要安装以下环境：
 
-   ```bash
-   npm install
-   ```
+- **Node.js 20.9 或更高版本**（建议使用 LTS 版本）：[官方下载](https://nodejs.org/en/download)
+- npm（随 Node.js 一同安装）
+- DeepSeek API Key：[DeepSeek 开放平台](https://platform.deepseek.com/)
 
-3. 将根目录中的 `.env.example` 复制为 `.env.local`，填写自己的密钥：
+安装 Node.js 后，重新打开终端，检查版本：
 
-   ```env
-   DEEPSEEK_API_KEY=your_deepseek_api_key_here
-   ```
+```bash
+node -v
+npm -v
+```
 
-   Windows PowerShell 可执行 `Copy-Item .env.example .env.local`。
+### 2. 获取项目并安装依赖
 
-4. 启动开发服务器：
+下载本仓库的 ZIP 压缩包并解压，或使用 Git 克隆仓库。
 
-   ```bash
-   npm run dev
-   ```
+在终端进入包含 `package.json` 的项目根目录，运行：
 
-5. 打开 [http://localhost:3000](http://localhost:3000)。
+```bash
+npm install
+```
 
-Windows PowerShell 如限制 `npm` 脚本运行，可改用 `npm.cmd install` 和 `npm.cmd run dev`。
+Windows PowerShell 如果提示禁止运行 `npm.ps1`，可改用：
+
+```powershell
+npm.cmd install
+```
+
+### 3. 配置 DeepSeek API
+
+在项目根目录中，将 `.env.example` 复制并重命名为 `.env.local`。
+
+Windows PowerShell 可以执行：
+
+```powershell
+Copy-Item .env.example .env.local
+```
+
+打开 `.env.local`，将示例值替换为自己的 DeepSeek API Key：
+
+```env
+DEEPSEEK_API_KEY=你的DeepSeek_API_Key
+```
+
+### 4. 启动项目
+
+```bash
+npm run dev
+```
+
+Windows PowerShell 可使用：
+
+```powershell
+npm.cmd run dev
+```
+
+启动成功后，在浏览器访问：
+
+http://localhost:3000
+
+进入 StudyForge 后，可上传学习资料或选择知识库文档，描述学习需求并创建互动学习空间。
 
 ## 技术栈
 
